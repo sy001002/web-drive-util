@@ -11,6 +11,7 @@ const delay = require('./delay')
  * @return {Promise <res>}
  */
 async function followLocation(url, opts) {
+	opts = opts || {}
 	opts.requestDelay = opts.requestDelay || 3000
 
 	while( true ) {
