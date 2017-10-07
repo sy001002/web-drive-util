@@ -20,7 +20,6 @@ function getData(res) {
 /**
  * @param {string} url
  * @param {object} opts
- * @param {string} opts.method - Default to 'GET'
  * @param {object} opts.headers
  * @param {number} opts.timeout - Default to 30000
  * @return {Promise <res>}
@@ -35,7 +34,7 @@ function request(url, opts) {
 		if( isNaN(port) )
 			port = undefined
 
-		const req = engine.request({
+		const req = engine.get({
 			...{
 				hostname: Url.hostname,
 				port,

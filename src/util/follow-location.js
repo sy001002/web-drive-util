@@ -4,7 +4,6 @@ const delay = require('./delay')
 /**
  * @param {string} url
  * @param {object} opts
- * @param {string} opts.method - Default to 'GET'
  * @param {object} opts.headers
  * @param {number} opts.timeout - Default to 30000
  * @param {number} opts.requestDelay - Default to 3000
