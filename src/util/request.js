@@ -39,6 +39,7 @@ function request(url, opts) {
 			},
 			...opts,
 		}, res => {
+			res.ok = res.statusCode >= 200 && res.statusCode < 400
 			res.text = () => getData(res)
 			resolve(res)
 		})
