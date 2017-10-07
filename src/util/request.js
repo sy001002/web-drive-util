@@ -29,7 +29,7 @@ function request(url, opts) {
 	return new Promise((resolve, reject) => {
 		opts = opts || {}
 		const Url = new URL(url)
-		const engine = ENGINES[Url.protocol]
+		const engine = ENGINES[(/^([a-z]+):?/).exec(Url.protocol)[1]]
 
 		const req = engine.request({
 			...{
