@@ -31,10 +31,14 @@ function request(url, opts) {
 		const Url = new URL(url)
 		const engine = ENGINES[(/^([a-z]+):?/).exec(Url.protocol)[1]]
 
+		let port = parseInt(Url.port)
+		if( isNaN(port) )
+			port = undefined
+
 		const req = engine.request({
 			...{
 				hostname: Url.hostname,
-				port: parseInt(Url.port),
+				port,
 				path: Url.pathname + Url.search,
 				timeout: 30000,
 			},
