@@ -5,6 +5,19 @@ const ENGINES = {
 }
 
 /**
+ * @return {Promise}
+ */
+function getData(res) {
+	return new Promise((resolve, reject) => {
+		let data = ''
+
+		res.on('data', chunk => data += chunk.toString())
+		res.on('end', resolve(data))
+		res.on('error', err => reject(err))
+	})
+}
+
+/**
  * @param {string} url
  * @param {object} opts
  * @param {string} opts.method - Default to 'GET'
@@ -25,7 +38,10 @@ function request(url, opts) {
 				timeout: 30000,
 			},
 			...opts,
-		}, res => resolve(res))
+		}, res => {
+			res.text = () => getData(res)
+			resolve(res)
+		})
 
 		req.on('error', err => {
 			reject(err)
