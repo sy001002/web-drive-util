@@ -1,0 +1,8 @@
+{
+  "name": "web-drive-util",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/sy001002/web-drive-util.git",
+  "author": "SY",
+  "license": "MIT"
+}
