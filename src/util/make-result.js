@@ -10,15 +10,15 @@
  * @param {string} url
  * @param {string} filename
  * @param {string} cookie
- * @param {string} range
+ * @param {boolean} hasRange
  * @return {result}
  */
-function makeResult(url, filename, cookie, range) {
+function makeResult(url, filename, cookie, hasRange) {
 	return {
 		url,
 		filename,
 		cookie,
-		range,
+		range: hasRange ? 'bytes' : null,
 	}
 }
 

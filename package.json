@@ -1,6 +1,6 @@
 {
   "name": "web-drive-util",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "src/index.js",
   "repository": "https://github.com/sy001002/web-drive-util.git",
   "author": "SY",
